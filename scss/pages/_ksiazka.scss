@@ -1,0 +1,505 @@
+.book-cover {
+	&--img {
+		transform: scale(1);
+
+		@include media-breakpoint-up(lg) {
+			position: absolute;
+			left: -31%;
+			top: -21%;
+			transform: scale(0.54);
+			transform-origin: left top;
+		}
+
+		@include media-breakpoint-up(xl) {
+			position: absolute;
+			left: -26%;
+			top: -17%;
+			transform: scale(0.7);
+			transform-origin: left top;
+		}
+
+		@include media-breakpoint-up(xxl) {
+			position: absolute;
+			left: -36%;
+			top: -37%;
+			transform: scale(1);
+			transform-origin: center;
+		}
+	}
+
+	.btn-default {
+		@include media-breakpoint-up(xl) {
+			position: absolute;
+			right: 0;
+			bottom: -37px;
+		}
+	}
+}
+
+.book-slogan,
+.book-patrons {
+	padding-top: 56px;
+
+	@include media-breakpoint-up(xl) {
+		padding-top: 160px;
+	}
+
+	@include media-breakpoint-up(xxl) {
+		padding-top: 360px;
+	}
+}
+.book-slogan {
+	@include media-breakpoint-up(xl) {
+		padding-bottom: 30px;
+	}
+	@include media-breakpoint-up(xxl) {
+		padding-bottom: 100px;
+	}
+
+	&--title {
+		font-size: 36px;
+		line-height: 46px;
+		font-weight: 600;
+
+		@include media-breakpoint-up(xl) {
+			font-size: 50px;
+			line-height: 60px;
+		}
+
+		span {
+			color: $accent;
+		}
+	}
+}
+
+$iframeWidth: 1070px;
+$iframeHeight: 600px;
+
+.book-content {
+	.iframe-wrapper {
+		video {
+			max-width: 80%;
+		}
+	}
+}
+
+.book-testimonials {
+	.testimonial {
+		display: flex;
+		align-items: flex-start;
+		padding: 0px 10px;
+
+		p {
+			margin-bottom: 0;
+		}
+
+		&--content {
+			padding-left: 10px;
+			padding-top: 20px;
+		}
+
+		&--txt {
+			font-size: 16px;
+			font-weight: 300;
+			line-height: 22px;
+			margin-bottom: 0;
+		}
+
+		&--author {
+			font-size: 16px;
+			font-weight: 600;
+			margin-bottom: 0;
+		}
+	}
+}
+
+.testimonials-nav {
+	display: flex;
+	align-items: center;
+	justify-content: flex-end;
+
+	.testimonial-slide {
+		&-next,
+		&-prev {
+			cursor: pointer;
+			margin: 0px 10px;
+		}
+		&-next {
+			img {
+				transform: rotate(180deg);
+			}
+		}
+	}
+}
+
+.book-patrons {
+	padding-bottom: 35px;
+
+	@include media-breakpoint-up(xl) {
+		padding-top: 160px;
+	}
+
+	@include media-breakpoint-up(xxl) {
+		padding-top: 160px;
+	}
+
+	.container {
+		border-bottom: 1px solid $accent;
+	}
+
+	h1,
+	h2,
+	h3,
+	h4,
+	h5,
+	h6,
+	p {
+		margin: 0;
+	}
+	.bl-accent {
+		position: relative;
+		@include media-breakpoint-up(xl) {
+			&:before {
+				content: "";
+				width: 1px;
+				height: 70%;
+				display: block;
+				background-color: $accent;
+				position: absolute;
+				left: -20px;
+				top: 15%;
+			}
+		}
+	}
+
+	.patrons--loop {
+		margin-top: 20px;
+		display: flex;
+		align-items: center;
+		justify-content: flex-start;
+		gap: 35px;
+	}
+}
+
+.book-cta {
+	margin-top: 36px;
+	margin-bottom: 36px;
+	background-color: #efefef;
+	background-repeat: no-repeat;
+	background-size: 0px;
+
+	@include media-breakpoint-up(xl) {
+		margin-top: 100px;
+		margin-bottom: 100px;
+		background-size: cover;
+	}
+
+	h3 {
+		font-size: 50px;
+		font-weight: 600;
+		line-height: 60px;
+	}
+}
+
+.book {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	margin-bottom: 30px;
+	width: 100%;
+
+	@include media-breakpoint-up(xl) {
+		width: calc(400px - 3%);
+	}
+
+	@include media-breakpoint-up(xxl) {
+		width: 400px;
+	}
+
+	&--title {
+		font-size: 32px;
+		font-weight: 600;
+		text-align: center;
+	}
+
+	&--price {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+
+		.price-before {
+			font-size: 24px;
+			font-weight: 300;
+			padding-right: 7px;
+		}
+
+		.price-act {
+			font-size: 34px;
+			font-weight: 600;
+		}
+
+		&-col-1 {
+			padding-right: 14px;
+		}
+
+		&-col-2 {
+			width: 102px;
+			font-size: 11px;
+			font-weight: 600;
+			line-height: 13px;
+			text-align: center;
+			position: relative;
+
+			&::before {
+				content: "";
+				width: 1px;
+				background-color: #fff;
+				height: 70%;
+				position: absolute;
+				left: 0;
+				top: 15%;
+			}
+		}
+	}
+
+	&--price-box {
+		background-color: $accent;
+		border-radius: 3px;
+		display: flex !important;
+		align-items: center !important;
+		justify-content: center !important;
+		padding: 4px 9px;
+		margin-top: -3px;
+	}
+
+	&--footer {
+		margin-top: -90px;
+	}
+
+	&--version {
+		margin-top: 25px;
+
+		p {
+			font-size: 16px;
+			font-weight: 300;
+			text-align: center;
+			margin-bottom: 10px;
+		}
+	}
+
+	&__featured {
+		@include media-breakpoint-up(xl) {
+			width: calc(540px - 3%);
+		}
+
+		@include media-breakpoint-up(xxl) {
+			width: 540px;
+		}
+
+		.book--price-box {
+			background-color: #000;
+			padding: 14px 16px;
+			border-radius: 5px;
+		}
+
+		.price-before {
+			color: $accent;
+			font-size: 38px;
+
+			@include media-breakpoint-up(lg) {
+				font-size: 28px;
+			}
+
+			@include media-breakpoint-up(xl) {
+				font-size: 38px;
+			}
+		}
+
+		.strikethrough:before {
+			border-top: 2px solid $accent !important;
+		}
+
+		.price-act {
+			color: #fff;
+			font-size: 61px;
+
+			@include media-breakpoint-up(lg) {
+				font-size: 44px;
+			}
+
+			@include media-breakpoint-up(xl) {
+				font-size: 61px;
+			}
+		}
+
+		.book--price-col-2 {
+			color: #fff;
+			font-size: 20px;
+			line-height: 24px;
+			width: 190px;
+
+			@include media-breakpoint-up(lg) {
+				font-size: 16px;
+				line-height: 18px;
+				width: 130px;
+			}
+
+			@include media-breakpoint-up(xl) {
+				font-size: 20px;
+				line-height: 24px;
+				width: 190px;
+			}
+
+			&::before {
+				content: "";
+				opacity: 0;
+
+				@include media-breakpoint-up(xl) {
+					content: "";
+					opacity: 1;
+				}
+			}
+
+			span {
+				color: $accent;
+			}
+		}
+	}
+}
+
+.free-chapter {
+	border-radius: 3px;
+	max-width: 1090px;
+	margin: 0 auto;
+
+	&--header {
+		@include media-breakpoint-up(lg) {
+			padding-bottom: 40px;
+		}
+
+		p {
+			line-height: 22px;
+			font-size: 16px;
+		}
+	}
+
+	h3 {
+		font-weight: 600;
+		font-size: 30px;
+		text-align: center;
+		line-height: 33px;
+		@include media-breakpoint-up(lg) {
+			font-size: 71px;
+			text-align: left;
+		}
+	}
+
+	p {
+		font-size: 16px;
+		font-weight: 300;
+		text-align: center;
+
+		@include media-breakpoint-up(lg) {
+			text-align: left;
+		}
+	}
+
+	&--img {
+		position: relative;
+		left: 50px;
+
+		@include media-breakpoint-up(lg) {
+			min-width: 452px;
+			position: absolute;
+			top: -189px;
+			left: -79px;
+		}
+
+		@include media-breakpoint-up(xl) {
+			min-width: 452px;
+			position: absolute;
+			top: -190px;
+			left: -44px;
+		}
+	}
+
+	form * {
+		box-sizing: border-box;
+
+		.input-wrapper {
+			width: 100%;
+			position: relative;
+		}
+	}
+
+	input,
+	label {
+		border-radius: 3px;
+		border: none;
+	}
+
+	input:not([type="checkbox"]) {
+		height: 50px;
+		padding-left: 22px;
+		box-sizing: border-box;
+		max-width: 100%;
+		width: 100%;
+		@include media-breakpoint-up(xl) {
+			height: 87px;
+		}
+	}
+
+	input[type="submit"] {
+		width: 100%;
+		font-size: 19px;
+		font-weight: 600;
+		background-color: #fff;
+		margin-top: 10px;
+
+		@include media-breakpoint-up(xl) {
+			font-size: 30px;
+		}
+	}
+
+	&--acceptance-box {
+		.wpcf7-list-item {
+			padding: 0;
+			margin: 0;
+		}
+
+		label {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+
+			@include media-breakpoint-up(xl) {
+				flex-direction: row;
+				align-items: flex-start;
+			}
+		}
+
+		p {
+			@include media-breakpoint-up(xl) {
+				position: relative;
+				left: 14px;
+				top: -10px;
+				font-size: 11px;
+				font-weight: 300;
+				line-height: 14px;
+			}
+		}
+
+		
+	}
+}
+
+
+.pointer-none {
+	pointer-events: none;
+}
+
+.free-chapter-btn {
+	margin-top: 43px;
+
+}

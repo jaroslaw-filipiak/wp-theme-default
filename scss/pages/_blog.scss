@@ -1,0 +1,26 @@
+.page-template-template-blog {
+
+    .article-card {
+        position: relative ;
+
+        &--link {
+            margin-top: 20px;
+            display: block;
+        }
+
+        &--meta {
+            display: none;
+        }
+
+        a.p-absolute {
+			position: absolute;
+			left: 0;
+			top: 0;
+			width: 100%;
+			height: 100%;
+			display: block;
+			z-index: 3;
+		}
+
+    }
+}

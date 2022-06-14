@@ -1,0 +1,43 @@
+.page-title {
+	font-weight: 600;
+	color: #000;
+	font-size: 50px;
+	text-align: center;
+
+	@include media-breakpoint-up(md) {
+		font-size: 65px;
+	}
+
+	@include media-breakpoint-up(lg) {
+		font-size: 90px;
+		text-align: right;
+	}
+
+	@include media-breakpoint-up(xl) {
+		font-size: 140px;
+		text-align: right;
+	}
+
+	@include media-breakpoint-up(xxl) {
+		font-size: 190px;
+		text-align: right;
+	}
+
+	h1 {
+		position: relative;
+		line-height: 3.3rem;
+
+		@include media-breakpoint-up(lg) {
+			&:after {
+				content: "";
+				// TODO
+				width: calc(100% - 759px - 4%);
+				display: block;
+				position: absolute;
+				left: 0;
+				bottom: -30px;
+				border-bottom: 1px solid $accent;
+			}
+		}
+	}
+}

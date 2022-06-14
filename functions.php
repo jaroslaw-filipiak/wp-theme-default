@@ -122,8 +122,8 @@ add_action( 'after_setup_theme', 'szymon_janiak_content_width', 0 );
 function szymon_janiak_widgets_init() {
 	register_sidebar(
 		array(
-			'name'          => esc_html__( 'Sidebar', 'szymon-janiak' ),
-			'id'            => 'sidebar-1',
+			'name'          => esc_html__( 'Pojedyńczy wpis (Blog)', 'szymon-janiak' ),
+			'id'            => 'sidebar-blog',
 			'description'   => esc_html__( 'Add widgets here.', 'szymon-janiak' ),
 			'before_widget' => '<section id="%1$s" class="widget %2$s">',
 			'after_widget'  => '</section>',
@@ -144,6 +144,10 @@ function szymon_janiak_scripts() {
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
+	}
+
+	if(is_page(12) || is_front_page()) {
+		wp_enqueue_script( 'glider-js', get_theme_file_uri(). '/js/glider.min.js', array(), _S_VERSION, true );
 	}
 }
 add_action( 'wp_enqueue_scripts', 'szymon_janiak_scripts' );
@@ -173,4 +177,36 @@ require get_template_directory() . '/inc/customizer.php';
  */
 if ( defined( 'JETPACK__VERSION' ) ) {
 	require get_template_directory() . '/inc/jetpack.php';
+}
+
+/**
+ * Custom post types
+ */
+require get_template_directory() . '/inc/post-types.php';
+
+
+/**
+ * Disable weird margin top if admin bar is visible
+ */
+add_action('get_header', 'my_filter_head');
+
+function my_filter_head() {
+   remove_action('wp_head', '_admin_bar_bump_cb');
+} 
+
+/*
+ * Custom language switcher shortcode
+ */
+add_shortcode('custom-language-switcher', 'trpc_custom_language_switcher', 10);
+function trpc_custom_language_switcher(){
+	$languages = trp_custom_language_switcher();
+	$html = "<ul class='d-flex gap-2' data-no-translation>";
+	foreach ($languages as $name => $item) {
+		$html .= "<li>";
+		$html .= "<a class='text-uppercase' href='{$item['current_page_url']}'>";
+		$html .= "<span>{$item['short_language_name']}</span></a></li>";
+	}
+	$html .= "</ul>";
+
+	return $html;
 }

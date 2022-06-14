@@ -1,19 +1,36 @@
-@import './scss/abstracts/mixins';
-@import './scss/abstracts/variables';
+@import "./scss/vendors/bootstrap";
 
-@import './scss/vendors/bootstrap';
+@import "./scss/abstracts/mixins";
+@import "./scss/abstracts/variables";
 
-@import './scss/base/reset';
-@import './scss/base/typography';
+@import "./scss/vendors/hamburgers/hamburgers";
+@import "./scss/vendors/loop-and-logic";
+@import "./scss/vendors/glider";
 
-@import './scss/components/buttons';
+@import "./scss/base/reset";
+@import "./scss/base/typography";
 
-@import './scss/layout/footer';
-@import './scss/layout/forms';
-@import './scss/layout/header';
-@import './scss/layout/navigation';
+@import "./scss/components/buttons";
+@import "./scss/components/page-title";
 
-@import './scss/pages/blog';
-@import './scss/pages/home';
+@import "./scss/layout/footer";
+@import "./scss/layout/forms";
+@import "./scss/layout/header";
+@import "./scss/layout/navigation";
+@import "./scss/layout/single-blog";
+@import "./scss/layout/single-media";
 
-@import './scss/utils/debug';
+@import "./scss/pages/blog";
+@import "./scss/pages/home";
+@import "./scss/pages/podcasty";
+@import "./scss/pages/ksiazka";
+
+// @import "./scss/utils/debug";
+
+.bt-accent {
+	border-top: 1px solid $accent;
+}
+
+.bb-accent {
+	border-bottom: 1px solid $accent;
+}

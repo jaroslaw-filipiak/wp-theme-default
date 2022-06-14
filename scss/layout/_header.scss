@@ -1,0 +1,156 @@
+$topBarindex: 700;
+$menuScreenIndex: 600;
+$topBarAfterScrollBG: #f9f9f9;
+$topBarAfterScrollHeight: 100px;
+
+.top-bar {
+	padding-top: 28px;
+	height: 80px;
+	width: 100%;
+	background: white;
+	position: fixed;
+	left: 0;
+	top: 0;
+	z-index: 200;
+	@include defaultTranstion;
+
+	@include media-breakpoint-up(md) {
+		height: 166px;
+	}
+
+	@include media-breakpoint-down(lg) {
+		padding-top: 10px;
+	}
+
+	&--content {
+		position: relative;
+		z-index: $topBarindex;
+	}
+
+	@include media-breakpoint-up(sm) {
+		&__after-scroll {
+			height: $topBarAfterScrollHeight;
+			background: $topBarAfterScrollBG;
+			padding-top: 15px;
+			padding-bottom: 15px;
+
+			.logo--wrapper {
+				@include defaultTranstion;
+				a {
+					@include defaultTranstion;
+					img {
+						width: 100px;
+						@include defaultTranstion;
+					}
+				}
+
+				text#Venture_Capital,
+				line#Line_2 {
+					opacity: 0;
+				}
+			}
+		}
+	}
+}
+
+.logo--wrapper {
+	a {
+		@include defaultTranstion;
+		img {
+			width: 226px;
+			@include defaultTranstion;
+			@include media-breakpoint-down(sm) {
+				width: 104px;
+			}
+		}
+	}
+	svg {
+		@include media-breakpoint-down(lg) {
+			width: 104px;
+		}
+	}
+}
+
+.multilang-menu--wrapper {
+	margin-right: 40px;
+}
+
+#menuScreen {
+	z-index: $menuScreenIndex;
+	position: fixed;
+	left: 0;
+	top: 0;
+	width: 100vw;
+	height: 100vh;
+	align-items: center;
+	justify-content: center;
+	background-size: 400px;
+	background-repeat: no-repeat;
+	background-position: 20vw 8vh;
+	background-color: #fff;
+
+	@include media-breakpoint-down(lg) {
+		background-size: 320px;
+		background-position: 20vw bottom;
+		background-image: none !important;
+	}
+
+	@include media-breakpoint-up(xl) {
+		background-size: 320px;
+		background-position: 20vw 15vh;
+	}
+
+	@include media-breakpoint-up(xxl) {
+		background-size: 480px;
+		background-position: 20vw 15vh;
+	}
+
+	#menu-main {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		gap: 50px;
+
+		@include media-breakpoint-down(lg) {
+			gap: 40px;
+		}
+
+		@include media-breakpoint-down(xxl) {
+			gap: 30px;
+		}
+
+		.current-menu-item {
+			a {
+				&::after {
+					content: "";
+					width: 120%;
+					height: 6px;
+					background-color: $accent;
+					display: block;
+					position: absolute;
+					left: -10%;
+					bottom: -20px;
+
+					@include media-breakpoint-down(xxl) {
+						height: 4px;
+						bottom: -15px;
+					}
+				}
+			}
+		}
+
+		a {
+			font-size: 45px;
+			font-weight: 200;
+			color: #000;
+			text-decoration: none;
+			display: inline-block;
+			position: relative;
+
+			@include media-breakpoint-down(xxl) {
+				font-size: 34px;
+			}
+		}
+	}
+}

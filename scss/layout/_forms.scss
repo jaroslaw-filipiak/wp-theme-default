@@ -1,0 +1,105 @@
+$FORMfontSize: 16px;
+$FORMcolor: #000;
+$FORMborderColor: #707070;
+$FORMfontWeight: 300;
+
+.wpcf7-list-item {
+	padding-left: 0;
+	margin-left: 0;
+}
+
+.cf7--wrapper,
+.newsletter--cf7 {
+	padding: 0;
+
+	input:not([type="checkbox"]),
+	select,
+	textarea,
+	label {
+		width: 100%;
+		color: $FORMcolor;
+		font-size: $FORMfontSize;
+	}
+
+	.form {
+		&--acceptance {
+			label {
+				display: flex;
+				gap: 0px;
+			}
+
+			.wpcf7-list-item-label {
+				font-size: 11px;
+				font-weight: $FORMfontWeight;
+				line-height: 14px !important;
+			}
+
+			span.wpcf7-list-item {
+				padding-left: 0;
+				margin-left: 0;
+			}
+			
+		}
+	}
+
+	input,
+	select,
+	textarea {
+		border: 1px solid $FORMborderColor;
+		border-radius: 3px;
+		padding: 10px 20px;
+
+		&::placeholder {
+			font-size: $FORMfontSize;
+			font-weight: $FORMfontWeight;
+			opacity: 1;
+			color: $FORMcolor;
+		}
+	}
+
+	option,
+	select {
+		font-size: $FORMfontSize;
+		font-weight: $FORMfontWeight;
+		color: $FORMcolor;
+	}
+
+	select {
+		height: 56px;
+	}
+
+	input[type="submit"] {
+		background-color: $accent;
+		color: #000;
+		font-size: 20px;
+		font-weight: 600;
+		width: 205px;
+		height: 58px;
+		border-radius: 3px;
+		border: none;
+	}
+
+	p {
+		margin-bottom: 20px;
+	}
+
+	.wpcf7-spinner {
+		position: absolute;
+		right: 86px;
+		top: 19px;
+	}
+
+	.wpcf7-not-valid-tip {
+		font-size: 15px;
+	}
+}
+
+.newsletter--cf7 {
+	input,
+	select,
+	textarea {
+		@include media-breakpoint-down(xl) {
+			height: 58px;
+		}
+	}
+}

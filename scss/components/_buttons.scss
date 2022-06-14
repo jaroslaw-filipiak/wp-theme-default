@@ -1,0 +1,47 @@
+.btn-default {
+	background-color: $accent;
+	border-radius: 3px;
+	padding: 16px 34px;
+	font-size: 22px;
+	font-weight: 700;
+	color: #000;
+
+	@include media-breakpoint-up(xl) {
+		padding: 24px 54px;
+		font-size: 30px;
+	}
+
+	&__small {
+		font-size: 20px;
+		padding: 8px 24px;
+	}
+
+	small {
+		font-size: 14px;
+		padding-left: 10px;
+		font-weight: 300;
+	}
+}
+
+.btn-black {
+	background-color: #000;
+	border-radius: 3px;
+	padding: 16px 34px;
+	font-size: 22px;
+	font-weight: 700;
+	color: #fff;
+
+	&:hover {
+		color: #fff;
+	}
+
+	@include media-breakpoint-up(xl) {
+		padding: 24px 54px;
+		font-size: 30px;
+	}
+
+	&__small {
+		font-size: 20px;
+		padding: 8px 24px;
+	}
+}

@@ -1,0 +1,106 @@
+.contact-form {
+	&--inner {
+		position: relative;
+		padding-top: 45px;
+		margin-top: 45px;
+
+		@include media-breakpoint-up(md) {
+			padding-top: 55px;
+			margin-top: 55px;
+			border-top: 1px solid $accent;
+		}
+		@include media-breakpoint-up(xl) {
+			padding-top: 110px;
+			margin-top: 110px;
+		}
+
+		&::before {
+			@include media-breakpoint-down(md) {
+				content: "";
+				width: 96%;
+				height: 1px;
+				background-color: $accent;
+				position: absolute;
+				left: 2%;
+				top: 0;
+			}
+		}
+	}
+
+	a {
+		font-size: 23px;
+		font-weight: 700;
+		color: #000;
+		text-decoration: none;
+		display: block;
+		margin-bottom: 15px;
+
+		@include media-breakpoint-up(xl) {
+			font-size: 34px;
+			line-height: 51px;
+		}
+	}
+
+	h3 {
+		font-size: 40px;
+
+		@include media-breakpoint-down(md) {
+			margin-bottom: 45px;
+			margin-top: 10px;
+		}
+	}
+
+	h4,
+	.email-label {
+		font-size: 16px;
+		font-weight: 300;
+		line-height: 24px;
+
+		@include media-breakpoint-up(xl) {
+			font-size: 34px;
+			line-height: 44px;
+		}
+	}
+
+	.before-contact-form {
+		@include media-breakpoint-down(md) {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			justify-content: center;
+			text-align: center;
+		}
+	}
+}
+
+.footer-bottom {
+	background-color: #f7f7f7;
+	height: 103px;
+
+	small {
+		font-size: 10px;
+		font-weight: 300;
+	}
+
+	@include media-breakpoint-down(lg) {
+		svg {
+			width: 250px;
+		}
+
+		text#Venture_Capital,
+		line#Line_79 {
+			display: none;
+		}
+	}
+}
+
+
+#kontakt {
+	.form--acceptance {
+		font-size: 11px !important;
+
+		p {
+			font-size: 11px !important;
+		}
+	}
+}

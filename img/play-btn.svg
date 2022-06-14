@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="75" height="75" viewBox="0 0 75 75">
+  <g id="play-btn" transform="translate(-303 -725)">
+    <circle id="play-btn-2" data-name="play-btn" cx="37.5" cy="37.5" r="37.5" transform="translate(303 725)" fill="#67d0ff"/>
+    <path id="Polygon_7" data-name="Polygon 7" d="M13.5,0,27,23H0Z" transform="translate(356 749) rotate(90)" fill="#fff"/>
+  </g>
+</svg>
